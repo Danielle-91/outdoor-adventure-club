@@ -1,10 +1,8 @@
-function Search({keyword, setKeyword}) {
+function Search() {
 
     return(
         <input type="text"
-        value={keyword}
         placeholder={"Search Members by Name"}
-        onChange={(e) => setKeyword(e.target.value)}
         />
     )
 }

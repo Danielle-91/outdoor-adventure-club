@@ -1,14 +1,17 @@
 import {useState} from 'react';
-import Members from './Members';
 
 function Filter(props) {
-    const [choice, setChoice] = useState('placeholder');
+    const [choice, setChoice] = useState('');
+    const handleChoice = (e) => {
+        setChoice(e.target.value);
+    }
 
     return(
-        <form>
+        <form onSubmit={(e) => props.getActivities(e)}>
             <h2>Activities:</h2>
             <select 
             value={choice}
+            onChange={handleChoice}
             name="activities" 
             id="activities">
                 <option value="placeholder" disabled>Select a Recent Activity:</option>
@@ -24,6 +27,7 @@ function Filter(props) {
                 <option value="fishing">Fishing</option>
                 <option value="trees">Tree Climbing</option>
             </select>
+            <button type="submit">Submit</button>
         </form>
     )
 }

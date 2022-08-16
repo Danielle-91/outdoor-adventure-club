@@ -7,14 +7,12 @@ import Search from './Search';
 
 function App() {
   const [member, setMember] = useState(Members)
-  const [nameQuery, setNameQuery] = useState ('')
-  const [filteredMembs, setFilteredMembs] = useState([])
-  const filteredMembers = (e) => {
+  const [filteredKids, setFilteredKids] = useState([]);
+  const getActivities = (e) => {
     e.preventDefault();
-    if(nameQuery === ''){
-      setFilteredMembs()
-    }
+    console.log('filtering', e)
   }
+
   return (
     <>
       <header>
@@ -24,13 +22,13 @@ function App() {
       <section className="members">
         <div className="">
           <h2>Adventure Club Members:</h2>
-          <Search 
-          />
 
-          <Filter
-          member={member}/>
+          <Filter getActivities={getActivities}/>
+          
           <div className="list">
-            <Card member={member} />
+            <Card 
+            member={member}
+            />
           </div>
         </div>
         

@@ -8,6 +8,7 @@ function Card({member}){
                         return (
                             <div key={val.id}>
                                 <div className="person">
+                                    <img src="{val.img}" alt="{val.name}" />
                                     <h2>Name: {val.name}</h2>
                                     <h3>Age: {val.age}</h3>
                                     <h3>Rating: {val.rating}</h3>

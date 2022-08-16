@@ -1,5 +1,6 @@
 const Members = [
     {
+        img: "https://fillmurray.com/200/200",
         id: "1",
         name: "John",
         age: 10,
@@ -8,6 +9,7 @@ const Members = [
     },
     
     {
+        img: "https://fillmurray.com/200/200",
         id: "2",
         name: "Paul",
         age: 12,
@@ -16,6 +18,7 @@ const Members = [
     },
 
     {
+        img: "https://fillmurray.com/200/200",
         id: "3",
         name: "George",
         age: 11,
@@ -24,6 +27,7 @@ const Members = [
     },
 
     {
+        img: "https://fillmurray.com/200/200",
         id: "4",
         name: "Ringo",
         age: 13,
