@@ -3,6 +3,10 @@ body {
   text-align: center;
 }
 
+ul li {
+  list-style-type: none;
+}
+
 h1 {
   color: blue;
   margin: 0 auto;

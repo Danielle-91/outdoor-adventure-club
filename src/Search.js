@@ -1,9 +1,13 @@
-function Search() {
+function Search(props) {
 
     return(
-        <input type="text"
-        placeholder={"Search Members by Name"}
-        />
+        <div className="search">
+            <input type="text"
+                placeholder="Search..."
+
+            />
+
+        </div>
     )
 }
 
