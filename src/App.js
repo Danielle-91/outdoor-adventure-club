@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Card from './Card';
+import Search from './Search';
 
 function App() {
 
@@ -43,6 +44,11 @@ function App() {
     },
   ]);
 
+  // Search Bar Logic
+  const [query, setQuery] = useState('');
+  
+  
+
   // Delete Member Logic
   const removeMember = (members) => {
     const oldMems = [...member]
@@ -66,8 +72,19 @@ function App() {
           <h2>Adventure Club Members:</h2>
         </div>
 
+        <div className="searchBar">
+          <input placeholder="Search Members" onChange={e => setQuery(e.target.value)} />
+        </div>
+
         <div className="list">
-          {member.map((member) => {
+
+          {member.filter(member => {
+            if(query === ''){
+              return member;
+            } else if (member.name.toLowerCase().includes(query.toLowerCase())){
+              return member;
+            }
+          }).map((member) => {
 
             // New function created to access specific member to delete:
             const removeSpec = () => {
