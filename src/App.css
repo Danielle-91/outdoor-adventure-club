@@ -61,3 +61,7 @@ header {
   max-width: 1360px;
   width: 100%;
 }
+
+.rating {
+  color: red;
+}

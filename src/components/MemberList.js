@@ -17,7 +17,7 @@ function MemberList(props){
 
             <div>
                 <h3>Rating:</h3> 
-                <p>{props.rating}</p> 
+                <p className="rating">{props.rating}</p> 
             </div>
 
             <div>
