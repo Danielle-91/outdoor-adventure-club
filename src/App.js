@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import './App.css';
-import Card from './Card';
-import Search from './Search';
+import Header from './components/Header';
+import Card from './UI/Card';
+import Search from './components/Search';
+import Dropdown from './components/Dropdown';
+
+import MemberList from './components/MemberList';
 
 function App() {
 
   // Example member list
-  const [member, setMember] = useState([
+
+  const DUMMY_MEMBERS = [
     {
       img: "https://loremflickr.com/200/200",
-      id: "1",
+      id: "a1",
       name: "John",
       age: 10,
       rating: 4.5,
@@ -18,7 +23,7 @@ function App() {
 
     {
       img: "https://placekeanu.com/200/200",
-      id: "2",
+      id: "a2",
       name: "Paul",
       age: 12,
       rating: 5,
@@ -27,7 +32,7 @@ function App() {
 
     {
       img: "https://placebeard.it/200/200",
-      id: "3",
+      id: "a3",
       name: "George",
       age: 11,
       rating: 3.2,
@@ -36,19 +41,21 @@ function App() {
 
     {
       img: "https://placekitten.com/200/200",
-      id: "4",
+      id: "a4",
       name: "Ringo",
       age: 13,
       rating: 5,
       activities: ["fishing", "tennis", "tree climbing"]
     },
-  ]);
+  ]
+  const [member, setMember] = useState(DUMMY_MEMBERS);
+
+  // Dropdown Menu Logic
+  
 
   // Search Bar Logic
   const [query, setQuery] = useState('');
   
-  
-
   // Delete Member Logic
   const removeMember = (members) => {
     const oldMems = [...member]
@@ -62,18 +69,24 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>Outdoor Adventure Club</h1>
-      </header>
+    <Header>
+      <h2>Staff Zone</h2>
+    </Header>
 
       <section className="members">
         
-        <div className="">
-          <h2>Adventure Club Members:</h2>
+        <div>
+          <h2>Club Members:</h2>
+        </div>
+
+        <div className="dropdown">
+          <Dropdown
+          selectedActivity={member.activities}/>
         </div>
 
         <div className="searchBar">
           <input placeholder="Search Members" onChange={e => setQuery(e.target.value)} />
+
         </div>
 
         <div className="list">
@@ -92,7 +105,18 @@ function App() {
             }
 
             return(
-              <Card member={member} removeMember={() => {removeMember(member)}}/>
+              <Card>
+                <MemberList
+                  key={member.id} 
+                  img={member.img}
+                  name={member.name} 
+                  age={member.age}
+                  rating={member.rating}
+                  activities={member.activities}
+                  removeMember={() => {removeMember(member)}} 
+                />
+
+              </Card> 
             )
           })}
         </div>
