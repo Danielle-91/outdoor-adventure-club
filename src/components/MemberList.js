@@ -24,6 +24,8 @@ function MemberList(props){
                 <h3>Activities:</h3>
                 <p>{props.activities.join(' ')}</p>
             </div>
+
+            <button onClick={props.removeMember}>Remove Member</button>
         </Card>
         
     )

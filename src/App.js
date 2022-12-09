@@ -51,7 +51,17 @@ function App() {
   const [member, setMember] = useState(DUMMY_MEMBERS);
 
   // Dropdown Menu Logic
-  
+  const [choice, setChoice] = useState('');
+
+  const handleChoice = (e) => {
+    setChoice(e.target.value);
+  }
+
+  const activityChoice = (e) => {
+    e.preventDefault();
+    console.log(`you chose ${choice}!`)
+    // choice.length === props.selectedActivity ? 
+  }
 
   // Search Bar Logic
   const [query, setQuery] = useState('');
@@ -76,17 +86,19 @@ function App() {
       <section className="members">
         
         <div>
-          <h2>Club Members:</h2>
+          <h3>Club Members:</h3>
         </div>
 
         <div className="dropdown">
           <Dropdown
-          selectedActivity={member.activities}/>
+          selectedActivity={member.activities}
+          handleChoice={handleChoice}
+          activityChoice={activityChoice}
+          choice={choice}/>
         </div>
 
         <div className="searchBar">
           <input placeholder="Search Members" onChange={e => setQuery(e.target.value)} />
-
         </div>
 
         <div className="list">
@@ -105,7 +117,6 @@ function App() {
             }
 
             return(
-              <Card>
                 <MemberList
                   key={member.id} 
                   img={member.img}
@@ -113,10 +124,8 @@ function App() {
                   age={member.age}
                   rating={member.rating}
                   activities={member.activities}
-                  removeMember={() => {removeMember(member)}} 
+                  removeMember={removeSpec} 
                 />
-
-              </Card> 
             )
           })}
         </div>

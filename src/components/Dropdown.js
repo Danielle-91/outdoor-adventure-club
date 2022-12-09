@@ -1,24 +1,13 @@
 import {useState} from 'react';
 
 function Dropdown(props) {
-    const [choice, setChoice] = useState('');
-
-    const handleChoice = (e) => {
-        setChoice(e.target.value);
-    }
-
-    const activityChoice = (e) => {
-        e.preventDefault();
-        console.log(`you chose ${choice}!`)
-        // choice.length === props.selectedActivity ? 
-    }
 
     return(
-        <form onSubmit={activityChoice}>
-            <h2>Activities:</h2>
+        <form onSubmit={props.activityChoice}>
+            <h3>Activities:</h3>
             <select 
-            value={choice}
-            onChange={handleChoice}
+            value={props.choice}
+            onChange={props.handleChoice}
             name="activities" 
             id="activities">
                 <option value="placeholder">Select an Activity:</option>

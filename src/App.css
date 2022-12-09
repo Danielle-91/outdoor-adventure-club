@@ -39,6 +39,7 @@ h1 {
 
 button {
   background: red;
+  height: 80px;
   border: none;
   border-radius: 10px;
   padding: 10px;
@@ -60,6 +61,15 @@ header {
   height: 100vh;
   max-width: 1360px;
   width: 100%;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid black;
 }
 
 .rating {
