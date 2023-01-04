@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Card from './UI/Card';
@@ -50,21 +50,20 @@ function App() {
   ]
   const [member, setMember] = useState(DUMMY_MEMBERS);
 
-  // Dropdown Menu Logic
-  const [choice, setChoice] = useState('');
-
-  const handleChoice = (e) => {
-    setChoice(e.target.value);
-  }
-
-  const activityChoice = (e) => {
-    e.preventDefault();
-    console.log(`you chose ${choice}!`)
-    // choice.length === props.selectedActivity ? 
-  }
-
   // Search Bar Logic
   const [query, setQuery] = useState('');
+
+  // Dropdown Logic
+  const dropdownChoices = [...new Set(DUMMY_MEMBERS.flatMap((act) => act.activities))];
+  const filterActs = (e) => {
+    const selection = e.target.value;
+    setMember(
+      selection === ""
+      ? DUMMY_MEMBERS
+      : DUMMY_MEMBERS.filter((member) => member.activities.includes(selection)
+      )
+    )
+  }
   
   // Delete Member Logic
   const removeMember = (members) => {
@@ -88,13 +87,13 @@ function App() {
         <div>
           <h3>Club Members:</h3>
         </div>
-
+        
         <div className="dropdown">
+
           <Dropdown
-          selectedActivity={member.activities}
-          handleChoice={handleChoice}
-          activityChoice={activityChoice}
-          choice={choice}/>
+          filterActs={filterActs}
+          setMember={setMember}
+          dropdownChoices={dropdownChoices}/>
         </div>
 
         <div className="searchBar">
@@ -108,8 +107,9 @@ function App() {
               return member;
             } else if (member.name.toLowerCase().includes(query.toLowerCase())){
               return member;
-            }
-          }).map((member) => {
+            } 
+          })
+          .map((member) => {
 
             // New function created to access specific member to delete:
             const removeSpec = () => {

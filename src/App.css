@@ -39,7 +39,8 @@ h1 {
 
 button {
   background: red;
-  height: 80px;
+  height: 50px;
+  width: 150px;
   border: none;
   border-radius: 10px;
   padding: 10px;
@@ -59,19 +60,63 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  max-width: 1360px;
+  max-width: 2000px;
   width: 100%;
 }
 
-.card {
+.list {
+  /* border: 2px solid red; */
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 20px;
-  padding: 20px;
-  border: 2px solid black;
+  flex-wrap: wrap;
 }
 
-.rating {
+.card {
+  width: calc((100% / 2) - 20px);
+  display: flex;
+  /* flex-direction: column; */
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.nameFlex {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.nameFlex img {
+  border-radius: 50%;
+}
+
+.info {
+  /* border: 2px solid blue; */
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+/* .info h3 {
+  text-align: left;
+}
+
+.info p {
+  text-align: right;
+}
+
+.info p:last-child {
+  flex-direction: column;
+} */
+
+.ratingNum {
   color: red;
+}
+
+.remove {
+  margin: 0 auto;
 }
