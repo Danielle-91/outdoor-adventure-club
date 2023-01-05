@@ -1,10 +1,10 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Card from './UI/Card';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
-import DummyList from './components/DummyList';
+import DummyData from './components/DummyData';
 import MemberList from './components/MemberList';
 
 function App() {
@@ -12,19 +12,19 @@ function App() {
   // Example member list
 
   
-  const [member, setMember] = useState(DummyList);
+  const [member, setMember] = useState(DummyData);
 
   // Search Bar Logic
   const [query, setQuery] = useState('');
 
   // Dropdown Logic
-  const dropdownChoices = [...new Set(DummyList.flatMap((act) => act.activities))];
+  const dropdownChoices = [...new Set(DummyData.flatMap((act) => act.activities))];
   const filterActs = (e) => {
     const selection = e.target.value;
     setMember(
       selection === ""
-      ? DummyList
-      : DummyList.filter((member) => member.activities.includes(selection)
+      ? DummyData
+      : DummyData.filter((member) => member.activities.includes(selection)
       )
     )
   }
@@ -48,6 +48,7 @@ function App() {
         
         <div>
           <h2>Club Members:</h2>
+          <h3>There are {member.length} Members</h3>
         </div>
         
         <div className="dropdown">

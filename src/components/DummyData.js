@@ -1,11 +1,11 @@
-const DummyList = [
+const DummyData = [
     {
         img: "https://loremflickr.com/200/200",
         id: "a1",
         name: "John",
         age: 10,
         rating: 4.5,
-        activities: ["hiking", "swimming", "biking"]
+        activities: ["rowing", "swimming", "biking"]
     },
 
     {
@@ -50,7 +50,7 @@ const DummyList = [
         name: "Michelle",
         age: 12,
         rating: 4,
-        activities: ["hiking", "crafts", "tree climbing"]
+        activities: ["tennis", "crafts", "tree climbing"]
     },
 
     {
@@ -90,4 +90,4 @@ const DummyList = [
     }
 ]
 
-export default DummyList;
+export default DummyData;

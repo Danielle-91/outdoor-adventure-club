@@ -1,6 +1,7 @@
 import Card from "../UI/Card";
 
 function MemberList(props){
+    
     return(
         <Card>
             <div className="nameFlex">
