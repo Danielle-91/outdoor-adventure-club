@@ -4,63 +4,27 @@ import Header from './components/Header';
 import Card from './UI/Card';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
-
+import DummyList from './components/DummyList';
 import MemberList from './components/MemberList';
 
 function App() {
 
   // Example member list
 
-  const DUMMY_MEMBERS = [
-    {
-      img: "https://loremflickr.com/200/200",
-      id: "a1",
-      name: "John",
-      age: 10,
-      rating: 4.5,
-      activities: ["hiking", "swimming", "biking"]
-    },
-
-    {
-      img: "https://placekeanu.com/200/200",
-      id: "a2",
-      name: "Paul",
-      age: 12,
-      rating: 5,
-      activities: ["swimming", "crafts", "plant identification"]
-    },
-
-    {
-      img: "https://placebeard.it/200/200",
-      id: "a3",
-      name: "George",
-      age: 11,
-      rating: 3.2,
-      activities: ["volleyball", "tennis", "rowing"]
-    },
-
-    {
-      img: "https://placekitten.com/200/200",
-      id: "a4",
-      name: "Ringo",
-      age: 13,
-      rating: 5,
-      activities: ["fishing", "tennis", "tree climbing"]
-    },
-  ]
-  const [member, setMember] = useState(DUMMY_MEMBERS);
+  
+  const [member, setMember] = useState(DummyList);
 
   // Search Bar Logic
   const [query, setQuery] = useState('');
 
   // Dropdown Logic
-  const dropdownChoices = [...new Set(DUMMY_MEMBERS.flatMap((act) => act.activities))];
+  const dropdownChoices = [...new Set(DummyList.flatMap((act) => act.activities))];
   const filterActs = (e) => {
     const selection = e.target.value;
     setMember(
       selection === ""
-      ? DUMMY_MEMBERS
-      : DUMMY_MEMBERS.filter((member) => member.activities.includes(selection)
+      ? DummyList
+      : DummyList.filter((member) => member.activities.includes(selection)
       )
     )
   }
@@ -78,21 +42,18 @@ function App() {
 
   return (
     <>
-    <Header>
-      <h2>Staff Zone</h2>
-    </Header>
+    <Header />
 
       <section className="members">
         
         <div>
-          <h3>Club Members:</h3>
+          <h2>Club Members:</h2>
         </div>
         
         <div className="dropdown">
 
           <Dropdown
           filterActs={filterActs}
-          setMember={setMember}
           dropdownChoices={dropdownChoices}/>
         </div>
 

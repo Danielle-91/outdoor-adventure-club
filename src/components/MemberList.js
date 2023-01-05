@@ -16,12 +16,12 @@ function MemberList(props){
                 <div className="info">
                     <div className="age">
                         <h3>Age:</h3>
-                        <p>{props.age}</p> 
+                        <p className="number">{props.age}</p> 
                     </div>
 
                     <div className="rating">
                         <h3>Rating:</h3> 
-                        <p className="ratingNum">{props.rating}</p> 
+                        <p className="number">{props.rating}</p> 
                     </div>
 
                     <div className="activities">

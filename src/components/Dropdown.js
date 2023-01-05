@@ -1,16 +1,12 @@
-import MemberList from './MemberList';
-
-
-function Dropdown({filterActs, dropdownChoices, setMember}) {
+function Dropdown({filterActs, dropdownChoices}) {
 return(
     <form action="#">
         <label htmlFor="activities">Activities</label>
         <select name="activities" id="activities" onChange={filterActs}>
-            <option value=""
-            onChange={() => setMember(MemberList)}
-            >
+            <option value="">
                 All
             </option>
+
             {dropdownChoices.map((act) => {
 
                 return(
@@ -25,4 +21,3 @@ return(
 )
 }
     export default Dropdown;
-    // 
