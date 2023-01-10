@@ -9,12 +9,7 @@ import MemberList from './components/MemberList';
 
 function App() {
 
-  // Example member list
-
-  
   const [member, setMember] = useState(DummyData);
-
-  // Search Bar Logic
   const [query, setQuery] = useState('');
 
   // Dropdown Logic
@@ -30,6 +25,7 @@ function App() {
   }
   
   // Delete Member Logic
+
   const removeMember = (members) => {
     const oldMems = [...member]
 
@@ -38,8 +34,9 @@ function App() {
 
     // New array is returned from the filter method to update state:
     setMember(updatedMems);
-  }
+  };
 
+  // Main App:
   return (
     <>
     <Header />
@@ -64,6 +61,7 @@ function App() {
 
         <div className="list">
 
+          {/* Search Bar Functionality added to mapping of member list to filter results */}
           {member.filter(member => {
             if(query === ''){
               return member;
@@ -86,7 +84,7 @@ function App() {
                   age={member.age}
                   rating={member.rating}
                   activities={member.activities}
-                  removeMember={removeSpec} 
+                  removeMember={removeSpec}
                 />
             )
           })}

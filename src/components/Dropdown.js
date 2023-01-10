@@ -8,7 +8,6 @@ return(
             </option>
 
             {dropdownChoices.map((act) => {
-
                 return(
                     <option
                     value={act} key={act}>

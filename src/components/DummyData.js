@@ -1,10 +1,11 @@
 const DummyData = [
+
     {
         img: "https://loremflickr.com/200/200",
         id: "a1",
         name: "John",
         age: 10,
-        rating: 4.5,
+        rating: [5, 1, 4, 3],
         activities: ["rowing", "swimming", "biking"]
     },
 
@@ -13,7 +14,7 @@ const DummyData = [
         id: "a2",
         name: "Paul",
         age: 12,
-        rating: 5,
+        rating: [4, 4, 2, 5],
         activities: ["swimming", "crafts", "plant identification"]
     },
 
@@ -22,7 +23,7 @@ const DummyData = [
         id: "a3",
         name: "George",
         age: 11,
-        rating: 3.2,
+        rating: [3, 3, 5, 5],
         activities: ["volleyball", "tennis", "rowing"]
     },
 
@@ -31,7 +32,7 @@ const DummyData = [
         id: "a4",
         name: "Ringo",
         age: 13,
-        rating: 5,
+        rating: [2, 5, 4, 3],
         activities: ["fishing", "tennis", "tree climbing"]
     },
 
@@ -40,7 +41,7 @@ const DummyData = [
         id: "a5",
         name: "Kelly",
         age: 9,
-        rating: 3.5,
+        rating: [3, 4, 5, 5],
         activities: ["volleyball", "plant identification", "rowing"]
     },
 
@@ -49,7 +50,7 @@ const DummyData = [
         id: "a6",
         name: "Michelle",
         age: 12,
-        rating: 4,
+        rating: [4, 2, 5, 3],
         activities: ["tennis", "crafts", "tree climbing"]
     },
 
@@ -58,7 +59,7 @@ const DummyData = [
         id: "a7",
         name: "Beyonce",
         age: 10,
-        rating: 3.8,
+        rating: [3, 5, 4, 4],
         activities: ["biking", "crafts", "volleyball"]
     },
 
@@ -67,7 +68,7 @@ const DummyData = [
         id: "a8",
         name: "Diana",
         age: 7,
-        rating: 5,
+        rating: [3, 4, 1, 5],
         activities: ["fishing", "tennis", "swimming"]
     },
 
@@ -76,7 +77,7 @@ const DummyData = [
         id: "a9",
         name: "Florence",
         age: 12,
-        rating: 4,
+        rating: [4, 2, 2, 5],
         activities: ["biking", "tree climbing", "plant identification"]
     },
 
@@ -85,7 +86,7 @@ const DummyData = [
         id: "a10",
         name: "Mary",
         age: 8,
-        rating: 3.7,
+        rating: [3, 5, 4, 3],
         activities: ["crafts", "rowing", "hiking"]
     }
 ]

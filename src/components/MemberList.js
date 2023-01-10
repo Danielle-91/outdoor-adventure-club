@@ -1,7 +1,8 @@
 import Card from "../UI/Card";
 
 function MemberList(props){
-    
+    const avg = props.rating.reduce((a, b) => a + Number(b), 0) / props.rating.length;
+
     return(
         <Card>
             <div className="nameFlex">
@@ -22,7 +23,7 @@ function MemberList(props){
 
                     <div className="rating">
                         <h3>Rating:</h3> 
-                        <p className="number">{props.rating}</p> 
+                        <p className="number">{avg}</p> 
                     </div>
 
                     <div className="activities">
