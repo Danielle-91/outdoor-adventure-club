@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Card from './UI/Card';
-import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import DummyData from './components/DummyData';
 import MemberList from './components/MemberList';
@@ -48,16 +46,18 @@ function App() {
           <h3>There are {member.length} Members</h3>
         </div>
         
-        <div className="dropdown">
+        <div className="formFlex">
+          <div className="dropdown">
+            <Dropdown
+            filterActs={filterActs}
+            dropdownChoices={dropdownChoices}/>
+          </div>
 
-          <Dropdown
-          filterActs={filterActs}
-          dropdownChoices={dropdownChoices}/>
+          <div className="searchBar">
+            <input placeholder="Search Members" onChange={e => setQuery(e.target.value)} />
+          </div>
         </div>
-
-        <div className="searchBar">
-          <input placeholder="Search Members" onChange={e => setQuery(e.target.value)} />
-        </div>
+          
 
         <div className="list">
 
